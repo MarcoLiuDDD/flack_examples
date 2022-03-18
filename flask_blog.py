@@ -28,3 +28,14 @@ from config import Config
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
+
+@app/route('/')
+def index():
+  paragraphs = [
+    'para 1',
+    'para 2'
+  ]
+  return render_template('index.html', title='Home', data=paragraphs)
+
+if __name__ == '__main__':
+  
